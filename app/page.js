@@ -63,66 +63,68 @@ export default function Home() {
   const [userMessage, setUserMessage] = useState("");
 
   return (
-    <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Stack
-        direction={"colunm"}
+    <>
+      <Box
+        width="100vw"
+        height="100vh"
         display="flex"
-        flexDirection={"column"}
-        alignItems={"center"}
-        justifyContent={"space-between"}
-        border="1px solid black"
-        height="600px"
-        width="500px"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
       >
         <Stack
           direction={"colunm"}
-          spacing={2}
           display="flex"
-          flexDirection="column"
-          overflow="auto"
-          maxHeight="100%"
-          p={2}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          border="1px solid black"
+          height="600px"
+          width="500px"
         >
-          {message.map((message, index) => (
-            <Box
-              key={index}
-              display="flex"
-              justifyContent={
-                message.role === "assistant" ? "flex-start" : "flex-end"
-              }
-            >
+          <Stack
+            direction={"colunm"}
+            spacing={2}
+            display="flex"
+            flexDirection="column"
+            overflow="auto"
+            maxHeight="100%"
+            p={2}
+          >
+            {message.map((message, index) => (
               <Box
-                bgcolor={message.role === "assistant" ? "blue" : "gray"}
-                color="white"
-                borderRadius={12}
-                marginBottom={2}
-                p={2}
+                key={index}
+                display="flex"
+                justifyContent={
+                  message.role === "assistant" ? "flex-start" : "flex-end"
+                }
               >
-                {message.content}
+                <Box
+                  bgcolor={message.role === "assistant" ? "blue" : "gray"}
+                  color="white"
+                  borderRadius={12}
+                  marginBottom={2}
+                  p={2}
+                >
+                  {message.content}
+                </Box>
               </Box>
-            </Box>
-          ))}
+            ))}
+          </Stack>
+          <Stack direction={"row"} spacing={2} width={"70%"} marginY={4}>
+            <TextField
+              label="Message"
+              fullWidth
+              value={userMessage}
+              onChange={(e) => setUserMessage(e.target.value)}
+            />
+            <Button variant="contained" onClick={sendMessage}>
+              Send
+            </Button>
+          </Stack>
         </Stack>
-        <Stack direction={"row"} spacing={2} width={"70%"} marginY={4}>
-          <TextField
-            label="Message"
-            fullWidth
-            value={userMessage}
-            onChange={(e) => setUserMessage(e.target.value)}
-          />
-          <Button variant="contained" onClick={sendMessage}>
-            Send
-          </Button>
-        </Stack>
-      </Stack>
+      </Box>
       <Analytics />
-    </Box>
+    </>
   );
 }
