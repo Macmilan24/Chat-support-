@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HeadStarter Support Chat
 
-## Getting Started
+HeadStarter Support Chat is a web application built using Next.js and Material-UI that simulates a customer support chat interface. The application allows users to interact with an AI assistant for interview practice, providing a real-time chat experience.
 
-First, run the development server:
+## Features
+
+- Real-time chat interface with AI assistant.
+- Responsive design using Material-UI.
+- State management with React hooks.
+- Easy-to-extend and customize.
+
+## Installation
+
+Follow these steps to set up and run the project locally.
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/headstarter-support-chat.git
+cd headstarter-support-chat
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Running the Application
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To start using the HeadStarter Support Chat application:
 
-## Learn More
+1. **Clone the repository and install dependencies** as described in the Installation section.
+2. **Run the development server** with `npm run dev`.
+3. Open the application in your browser and start interacting with the AI assistant.
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can customize the AI assistant's behavior by modifying the `systemPrompt` in `route.js`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```javascript
+const systemPrompt = `
+You are the Headstarter Customer Support AI...
+...
+`;
+```
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions! Please follow these steps to contribute:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or suggestions, feel free to open an issue or contact me at [samueldagne93@gmail.com].
