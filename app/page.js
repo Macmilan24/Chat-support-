@@ -1,5 +1,7 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { Content } from "next/font/google";
 import { useState } from "react";
@@ -120,6 +122,7 @@ export default function Home() {
           </Button>
         </Stack>
       </Stack>
+      <Analytics />
     </Box>
   );
 }
